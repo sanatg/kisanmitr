@@ -1,50 +1,103 @@
-# Welcome to your Expo app 👋
+# 🌾 Kisan Mitra (किसान मित्र)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A hyper-personalized mobile AI companion for the modern Indian farmer, developed by **Code Crew** for the **Smart India Hackathon 2025**.
 
-## Get started
+---
 
-1. Install dependencies
+## 🎯 The Problem
+Small and marginal farmers in India face a critical information gap that leads to:
+- Reduced yields  
+- Lower profitability  
+- Increased risks from climate volatility and sub-optimal practices  
 
-   ```bash
-   npm install
-   ```
+Access to timely advice, transparent market data, and effective pest management is often fragmented and inaccessible.
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## ✨ Our Solution
+**Kisan Mitra** is a one-stop mobile application that bridges this gap.  
+It acts as a true friend to the farmer by providing a **hyper-personalized, AI-driven platform** that consolidates:
+- Crop advice  
+- Pest management  
+- Weather forecasts  
+- Government schemes  
 
-In the output, you'll find options to open the app in a
+into a single, intuitive interface.  
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+💡 **Mission**: Transform raw data into actionable wisdom, empowering farmers to increase yield, optimize resources, and improve livelihoods.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🚀 Key Features
+- 🤖 **Personalized AI Assistant**:  
+  Custom-trained agricultural LLM analyzes soil type, pH, satellite imagery, and weather for predictive crop recommendations.
 
-When you're ready, run:
+- 📸 **Image-Based Disease Diagnosis**:  
+  Farmers can upload a photo of an affected plant for instant diagnosis and low-cost remedies.
 
-```bash
-npm run reset-project
-```
+- 🗣️ **Multilingual Conversational Interface**:  
+  Voice-based Q&A in native languages (Hindi, Bengali, English, etc.) to overcome literacy barriers.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- 🌦️ **Hyper-Local Weather**:  
+  Real-time, farm-specific weather data and advisories.
 
-## Learn more
+- 🌐 **Offline-First Capability**:  
+  Critical features like pest diagnosis and FAQs work without internet.
 
-To learn more about developing your project with Expo, look at the following resources:
+- 📄 **Government Schemes**:  
+  Simplified, centralized access to the latest schemes and subsidies.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- 📊 **Personalized Dashboard**:  
+  A clean interface showing farm status, weather, and upcoming tasks.
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## 🛠️ Technical Architecture
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Frontend: The User Experience
+- **Framework**: React Native  
+- **Why?** Cross-platform (Android & iOS), rapid development, and native-like performance.
+
+### Intelligence & Data Layer: The Brains
+- **AI Core**: Custom-Trained Agricultural LLM (backend)  
+- **Data Sources**:  
+  - **Bhuvan API** → Soil parameters (pH, moisture)  
+  - **OpenWeather API** → Live meteorological data  
+
+---
+
+## 💡 Innovation: Offline-First Capability
+- **On-Device AI**: MiniCPM (lightweight LLM)  
+- **Why?** Rural connectivity is unreliable.  
+- **Fallback Functions**: Image-based pest diagnosis + basic queries directly on the phone.  
+
+---
+
+## ⚙️ System Flow
+- **With Internet**:  
+  - React Native app → Hono backend → Custom LLM  
+  - Data caching: Redis  
+  - Persistent storage: Firebase  
+  - External APIs: Bhuvan + OpenWeather  
+
+- **Without Internet**:  
+  - App uses on-device **MiniCPM LLM**  
+  - Offline Firebase DB provides essential functionality  
+
+---
+
+## 🏁 Getting Started
+
+
+# Clone the repository
+git clone https://github.com/your-repo/kisan-mitra.git
+cd kisan-mitra
+
+# Install dependencies
+npm install
+
+# Run the application on Android
+npx react-native run-android
+
+# Run the application on iOS
+npx react-native run-ios
